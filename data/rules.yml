@@ -2,12 +2,32 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Saudar usuario de volta
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: saudar
+    - action: utter_saudar
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: responder pedido da pizza
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+    - intent: pedir_pizza
+    - action: utter_pedir_pizza
+
+- rule: confirmar sabor da pizza e pedir endereço
+  steps:
+    - intent: especificar_pizza
+    - action: utter_especificar_pizza
+
+- rule: confirmar endereço e pedir confirmação de pedido
+  steps:
+    - intent: informar_endereco
+    - action: utter_informar_endereco
+
+- rule: confirmar pedido da pizza
+  steps:
+    - intent: comfirmar_pedido
+    - action: utter_comfirmar_pedido
+
+- rule: cancelar compra
+  steps:
+    - intent: cancelar_pedido
+    - action: utter_cancelar_pedido
